@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<article>
+  <title>Advanced Programming Term Project</title>
+
+  <articleinfo>
+    <subtitle>Text-based Image Operations Using Different Programming
+    Paradigms</subtitle>
+
+    <author>
+      <firstname>Mehmet</firstname>
+
+      <surname>CAMBAZ</surname>
+
+      <honorific>040020365</honorific>
+    </author>
+
+    <date>12.05.2006</date>
+  </articleinfo>
+
+  <section>
+    <title>Project Description</title>
+
+    <para>In this project, we are supposed to implement programs that can do
+    10 different operations on a picture with 4 different programming
+    languages.</para>
+
+    <para>The programming languages are:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>C (Procedural)</para>
+      </listitem>
+
+      <listitem>
+        <para>Java (Object-Oriented)</para>
+      </listitem>
+
+      <listitem>
+        <para>Python (Scripting)</para>
+      </listitem>
+
+      <listitem>
+        <para>Haskell (Functional)</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>The operations to be implemented are:</para>
+
+    <orderedlist>
+      <listitem>
+        <para>Flip a picture horizontally</para>
+      </listitem>
+
+      <listitem>
+        <para>Flip a picture vertically</para>
+      </listitem>
+
+      <listitem>
+        <para>Rotate a picture</para>
+      </listitem>
+
+      <listitem>
+        <para>Rotate a picture 90 degrees anticlockwise</para>
+      </listitem>
+
+      <listitem>
+        <para>Rotate a picture 90 degrees clockwise</para>
+      </listitem>
+
+      <listitem>
+        <para>Invert the color of a picture</para>
+      </listitem>
+
+      <listitem>
+        <para>Scale a picture by a factor</para>
+      </listitem>
+
+      <listitem>
+        <para>Crop a region in a picture</para>
+      </listitem>
+
+      <listitem>
+        <para>Find the difference of two pictures</para>
+      </listitem>
+
+      <listitem>
+        <para>Detect the edges in a picture</para>
+      </listitem>
+    </orderedlist>
+
+    <figure>
+      <title>Sample picture</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="1.jpg" />
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </section>
+
+  <section>
+    <title>Environments</title>
+
+    <section>
+      <title>Development Environment</title>
+
+      <variablelist>
+        <varlistentry>
+          <term>C</term>
+
+          <listitem>
+            <para>The C program is developed with Dev-C++ 4.9.9.2 IDE and
+            compiled with gcc compiler. It can be compiled as: "gcc
+            040020365_c.c -o 040020365_c" at command line.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Java</term>
+
+          <listitem>
+            <para>The Java program is developed with Eclipse 3.1 IDE and
+            compiled with javac compiler. Also it is controlled with netBeans
+            5.0 IDE, if put in a package it can be compiled properly. It can
+            be compiled as: "javac main.java" at command line.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Python</term>
+
+          <listitem>
+            <para>The Python program is developed with Eclipse 3.1 IDE at
+            Pydev perspective which is a eclipse plugin. Because it is a
+            scripting language, there is no need to compile the main code,
+            there is only need to compile the class. The class is
+            automatically compiled when the main.py is executed. It can be
+            executed as: "main.py" at command line or double clicking the
+            "main.py" file.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Haskell</term>
+
+          <listitem>
+            <para>The Haskell program is developed with Notepad. It can be
+            compiled as: "ghc --make Main.hs" at command line or double
+            clicking the "Main.hs" file.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </section>
+
+    <section>
+      <title>Execution Environment</title>
+
+      <variablelist>
+        <varlistentry>
+          <term>C</term>
+
+          <listitem>
+            <para>To execute the C program at Windows XP: Dev-C++ 4.9.9.2 must
+            be installed, at Dev-C++'s "bin" folder, which have "gcc.exe" must
+            be added to environment variables to be used as "gcc" at command
+            line. After compiled, as expressed above, the program can be
+            executed as entering "040020365_c" at command line.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Java</term>
+
+          <listitem>
+            <para>To execute the Java program at Windows XP: The Java
+            Development Kit 1.5.0.06 (jdk-1_5_0_06-windows-i586-p.exe), The
+            Java Runtime Environment 1.5.0.06
+            (jre-1_5_0_06-windows-i586-p.exe) -which can be get from
+            http://sun.java.com- must have been installed. Also to be able to
+            use "javac" and "java" at command line, Java Development Kit's
+            "bin" folder must be added to environment variables. After
+            compiling the program as expressed above, the Java program can be
+            executed as "java main" at command line. If wanted, the folder can
+            be added to a Eclipse java project and can be run as a java
+            application which requires Eclipse 3.1 to be installed.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Python</term>
+
+          <listitem>
+            <para>To execute the Python program at Windows XP: Python 2.4.2
+            Software Development Kit for Windows must have been installed. To
+            execute the Python program entering "main.py" at command line will
+            be enough. Also if the "main.py" is double clicked the program
+            will be automatically executed.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Haskell</term>
+
+          <listitem>
+            <para>To execute the Haskell program at Windows XP: Glasgow
+            Haskell Compiler 6.4.1 must have been installed. To be able to use
+            "ghc" at command line, GHC's "bin" folder must be added to
+            environment variables. After compiling the program as expressed
+            above, the Haskell program can be executed as "main" at command
+            line. Also it can be executed with double-clicking the "Main.hs"
+            file.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+  <section>
+    <title>Problem Discussions</title>
+
+    <section>
+      <title>Data Structures</title>
+
+      <section>
+        <title>Data Structure in C</title>
+
+        <para>A picture is a struct which consists a two-dimensional character
+        array named "pixels".</para>
+
+        <para><programlisting language="C">typedef struct pic_s
+{
+    char pixels[100][100];        
+} pic_t;</programlisting></para>
+      </section>
+
+      <section>
+        <title>Data Structure in Java</title>
+
+        <para>A picture is a public class has private members rows (number of
+        rows in the picture), cols (number of columns in the picture) and
+        public two-dimensional character array pixels whose size is set at
+        creation of the picture. The picture class has two constructors, has a
+        copy constructor, methods for setting and getting private members rows
+        and cols and a print method that prints the picture's pixels to
+        user.</para>
+
+        <programlisting language="Java">/**
+* picture class
+* represents a picture
+* contains number of rows (height)
+* number of columns (width)
+* picture content (pixels)
+* */ 
+public class picture 
+{
+  public char pixels[][];   //picture content
+  private int rows;         //number of rows (height)
+  private int cols;         //number of columns (width)
+
+  //constructor
+  picture()
+  {
+    //means nothing assigned
+    cols = 0;
+    rows = 0;
+    pixels = new char[100][100];	//default picture size is 100*100
+  }
+
+  //given height and width constructor
+  picture(int row, int col)
+  {
+    cols = col;
+    rows = row;
+    pixels = new char[row][col];
+  }
+
+  //copy constructor
+  picture(picture right)
+  {
+    cols = right.cols;
+    rows = right.rows;
+   
+    for(int i=0; i&lt;right.getRows(); i++)
+      pixels[i] = right.pixels[i];
+  }
+
+  public int getCols()
+  {
+    return cols;
+  }
+
+  public int getRows()
+  {
+    return rows;
+  }
+
+  public void setCols(int col)
+  {
+    cols = col;
+  }
+
+  public void setRows(int row)
+  {
+    rows = row;
+  }
+
+  /**
+  * prints the picture content to user
+  */
+  public void print()
+  {
+    for(int i=0; i&lt;getRows(); i++)
+    {
+      for(int j=0; j&lt;getCols(); j++)
+        System.out.print(pixels[i][j]);
+    
+      System.out.print("\n");
+    }
+  }
+}</programlisting>
+      </section>
+
+      <section>
+        <title>Data Structure in Python</title>
+
+        <para>A picture is a class like in Java but every member is public
+        because of Python's class characteristics. Also the picture content is
+        list of list of characters.</para>
+
+        <programlisting language="Python">##############################
+# picture class              #
+# used to represent pictures #
+##############################
+class picture:
+    rows = 0        #number of rows in the picture (height)
+    cols = 0        #number of columns in the picture (width)
+    pixels = []     #picture pixel content
+
+    #constructor
+    def __init__(self, row, col, filename=""):
+        self.rows = row
+        self.cols = col
+        self.pixels = []        
+        
+        if filename != "":
+            f = open(filename, 'r')        
+            
+            for i in range(row):
+                column = []
+                l = f.readline()
+                for j in range(col):
+                    column.append(l[j])    
+                self.pixels.append(column)  
+            
+            f.close()
+
+    #prints picture content    
+    def printPixels(self):
+        for i in range(self.rows):
+            for j in range(self.cols):
+                print self.pixels[i][j],
+            print '\n',</programlisting>
+      </section>
+
+      <section>
+        <title>Data Structure in Haskell</title>
+
+        <para>A picture is list of list of characters.</para>
+
+        <programlisting language="Haskell">type Picture = [[Char]]</programlisting>
+      </section>
+    </section>
+
+    <section>
+      <title>Problems and solutions</title>
+
+      <section>
+        <title>Flipping the picture horizontally</title>
+
+        <para>The given picture will be flipped horizontally. It means that
+        the picture will be flipped like there is a mirror at the bottom of
+        it. This operation can be made by changing the bottom line pixels of
+        the picture with upper line pixels.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para><programlisting language="C">void flipHorizontal(pic_t picInMemory, int lastRowIndex, int lastColIndex)
+{
+  pic_t flippedPic;
+  int j, i;
+
+  //flip horizontally
+  for(j=lastColIndex; j&gt;=0; j--)
+  {
+    for(i=0; i&lt;lastRowIndex+1; i++)
+      flippedPic.pixels[lastRowIndex-1-i][j] = picInMemory.pixels[i][j];    //critical line
+  }
+  //printing out
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">private static void flipHorizontal(picture picInMemory)
+{
+  picture flippedPic = new picture(picInMemory.getRows(), picInMemory.getCols());
+  int j, i;
+  int lastColIndex = picInMemory.getCols()-1;
+  int lastRowIndex = picInMemory.getRows()-1;
+
+  //flip horizontally
+  for(j=lastColIndex; j&gt;=0; j--)
+  {
+    for(i=0; i&lt;lastRowIndex+1; i++)
+      flippedPic.pixels[lastRowIndex-i][j] = picInMemory.pixels[i][j];    //critical line
+  }
+
+  flippedPic.print();
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">def flipHorizontal(pic):
+        
+  flippedPic = picture(pic.rows, pic.cols)
+
+  for i in range(pic.rows):
+    column = []
+    for j in range(pic.cols):
+      column.append(pic.pixels[pic.rows-1-i][j])       #critical line 
+    flippedPic.pixels.append(column)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">flipHorizontal :: Picture -&gt; Picture
+flipHorizontal = reverse</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting width="">..#...#...
+..#...#...
+..#.#.#...
+..##.##...
+..#...#...</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Flipping the picture vertically</title>
+
+        <para>The given picture will be flipped vertically. It means that the
+        picture will be flipped like there is a mirror at the right of it.
+        This operation can be made by changing the right vertical line pixels
+        of the picture with left vertical line pixels.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para>Critical line will be:<programlisting language="C">flippedPic.pixels[i][lastColIndex-j] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para>Critical line will be:<programlisting language="Java">flippedPic.pixels[i][lastColIndex-j] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para>Critical line will be:<programlisting language="Python">column.append(picInMemory.pixels[i][pic.cols-1-j])</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">flipVertical :: Picture -&gt; Picture
+flipVertical = map reverse</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting>...#...#..
+...##.##..
+...#.#.#..
+...#...#..
+...#...#..</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Rotating the picture</title>
+
+        <para>The given picture will be flipped both vertically and
+        horizontally.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para><programlisting language="C">pic_t rotatedPic, tempPic;
+int j, i;
+
+//flip horizontally
+for(j=lastColIndex; j&gt;=0; j--)
+{
+   for(i=0; i&lt;lastRowIndex+1; i++)
+       tempPic.pixels[lastRowIndex-1-i][j] = picInMemory.pixels[i][j];
+}
+
+//flip vertically    
+for(j=lastColIndex; j&gt;=0; j--)
+{
+   for(i=0; i&lt;lastRowIndex+1; i++)
+        rotatedPic.pixels[i][lastColIndex-j] = tempPic.pixels[i][j];
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">picture rotatedPic = new picture(picInMemory.getRows(), picInMemory.getCols());
+picture tempPic = new picture(picInMemory.getRows(), picInMemory.getCols());
+
+int j, i;
+int lastColIndex = picInMemory.getCols()-1;
+int lastRowIndex = picInMemory.getRows()-1;
+
+//flip horizontally
+for(j=lastColIndex; j&gt;=0; j--)
+{
+  for(i=0; i&lt;lastRowIndex+1; i++)
+    tempPic.pixels[lastRowIndex-i][j] = picInMemory.pixels[i][j];
+}
+
+//flip vertically    
+for(j=lastColIndex; j&gt;=0; j--)
+{
+  for(i=0; i&lt;lastRowIndex+1; i++)
+    rotatedPic.pixels[i][lastColIndex-j] = tempPic.pixels[i][j];
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">rotatedPic = picture(pic.rows, pic.cols)
+temppixels = []
+
+for i in range(pic.rows):
+    column1 = []
+    for j in range(pic.cols):
+        column1.append(pic.pixels[pic.rows-1-i][j])    
+    temppixels.append(column1)
+    
+for i in range(pic.rows):
+    column2 = []
+    for j in range(pic.cols):
+        column2.append(temppixels[i][pic.cols-1-j])    
+    rotatedPic.pixels.append(column2)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">rotate :: Picture -&gt; Picture
+rotate = flipHorizontal . flipVertical</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting>...#...#..
+...#...#..
+...#.#.#..
+...##.##..
+...#...#..</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Rotating the picture 90 degrees anti-clockwise</title>
+
+        <para>The given picture will be rotated 90 degrees anti-clockwise. It
+        means that the picture will be will be rotated to left by 90 degrees.
+        It can be done by taking the leftmost vertical line pixels to bottom
+        horizontal line pixels.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para>Critical line will be:<programlisting language="C">rotatedPic.pixels[lastColIndex-j][i] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para>Critical line will be:<programlisting language="Java">rotatedPic.pixels[lastColIndex-j][i] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para>Critical line will be:<programlisting language="Python">column.append(pic.pixels[j][pic.cols-1-i])</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">rotate90ac :: Picture -&gt; Picture
+rotate90ac =  transpose . reverse</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting>..... 
+.....
+.....
+#####
+.#...
+..#..
+.#...
+#####
+.....
+.....</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Rotating the picture 90 degrees clockwise</title>
+
+        <para>The given picture will be rotated 90 degrees clockwise. It means
+        that the picture will be will be rotated to right by 90 degrees. It
+        can be done by taking the leftmost vertical line pixels to upper
+        horizontal line pixels.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para>Critical line will be:<programlisting language="C">rotatedPic.pixels[j][lastRowIndex-i] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para>Critical line will be:<programlisting language="Java">rotatedPic.pixels[j][lastRowIndex-i] = picInMemory.pixels[i][j];</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para>Critical line will be:<programlisting language="Python">column.append(pic.pixels[pic.rows-1-j][i])</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">rotate90 :: Picture -&gt; Picture
+rotate90 = rotate90ac . rotate</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting>.....
+.....
+#####
+...#.
+..#..
+...#.
+#####
+.....
+.....
+.....</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Inverting the picture's color</title>
+
+        <para>Inverting the picture's color means that if the picture's pixel
+        is '.' then the pixel will be '#', if the picture's pixels is '#' then
+        the pixel will be '.'.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para><programlisting language="C">pic_t invertedPic;
+int j, i;    
+
+for(j=0; j&lt;lastColIndex+1; j++)
+{
+  for(i=0; i&lt;lastRowIndex+1; i++)
+    invertedPic.pixels[i][j] = picInMemory.pixels[i][j] == '#' ? '.' : '#';
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">for(j=0; j&lt;lastColIndex+1; j++)
+{
+  for(i=0; i&lt;lastRowIndex+1; i++)
+    invertedPic.pixels[i][j] = picInMemory.pixels[i][j] == '#' ? '.' : '#';
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">inverted = picture(pic.rows, pic.cols)
+    
+for i in range(pic.rows):
+  column = []
+  for j in range(pic.cols):
+    if pic.pixels[i][j] == '#':
+      column.append('.')
+    else:
+      column.append('#')
+   
+  inverted.pixels.append(column)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Haskell</title>
+
+          <para><programlisting language="Haskell">-- Function that inverts the color of the given picture
+invertColor :: Picture -&gt; Picture
+invertColor = map (map invert)
+
+-- Function that inverts the color of a pixel
+invert :: Char -&gt; Char
+invert ch = if ch == '.' then '#' else '.'</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture</title>
+
+          <programlisting>##.###.###
+##..#..###
+##.#.#.###
+##.###.###
+##.###.###</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Scaling the picture with given factor</title>
+
+        <para>The given picture will be scaled by the given factor. It means
+        that all the pixels will be regenerated in a scale*scale area.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para><programlisting language="C">for(i=0; i&lt;(lastRowIndex+1)*factor; i+=factor)
+{
+  for(j=0; j&lt;(lastColIndex+1)*factor; j+=factor)
+  {
+    for(k=0; k&lt;factor; k++)
+    {
+      for(m=0; m&lt;factor; m++)
+      {
+        scaledPic.pixels[i+k][j+m] = picInMemory.pixels[i/factor][j/factor];
+      }
+    }
+  }
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">picture scaledPic = new picture(picInMemory.getRows()*factor, picInMemory.getCols()*factor);
+    
+int lastColIndex = picInMemory.getCols()-1;
+int lastRowIndex = picInMemory.getRows()-1;
+int j, i, k, m;
+
+for(i=0; i&lt;(lastRowIndex+1)*factor; i+=factor)
+{
+  for(j=0; j&lt;(lastColIndex+1)*factor; j+=factor)
+  {
+    for(k=0; k&lt;factor; k++)
+    {
+      for(m=0; m&lt;factor; m++)
+      {
+        scaledPic.pixels[i+k][j+m] = picInMemory.pixels[i/factor][j/factor];
+      }
+    }
+  }
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">def scaleByFactor(pic, factor):
+    
+    row = pic.rows*factor
+    col = pic.cols*factor
+    scaledPic = picture(row, col)
+
+    for i in range(pic.rows):
+        temppixels = []
+        for j in range(pic.cols):            
+            for k in range(factor):
+                temppixels.append(pic.pixels[i][j])
+        for m in range(factor):
+            scaledPic.pixels.append(temppixels)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture (scaled by factor=2)</title>
+
+          <programlisting>....##......##......
+....##......##......
+....####..####......
+....####..####......
+....##..##..##......
+....##..##..##......
+....##......##......
+....##......##......
+....##......##......
+....##......##......</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Cropping a region from the picture</title>
+
+        <para>With given values: cropping x-start, y-start point and crop
+        height and width; the wanted region will be cropped. This means the
+        content pixels of x-start to x-start+height and y-start to
+        y-start+width area is the cropping region.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para>x is x-start point, y is y-start point, w is width, h is
+          height for cropping:<programlisting language="C">for(i=x; i&lt;x+h; i++)
+{
+  for(j=y; j&lt;y+w; j++)
+    croppedPic.pixels[i-x][j-y] = picInMemory.pixels[i][j];
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para>x is x-start point, y is y-start point for
+          cropping:<programlisting language="Java">for(i=x; i&lt;x+height; i++)
+{
+  for(j=y; j&lt;y+width; j++)
+    croppedPic.pixels[i-x][j-y] = picInMemory.pixels[i][j];
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para>x is x-start point, y is y-start point, w is width, h is
+          height for cropping:<programlisting language="Python">croppedPic = picture(h, w)
+    
+for i in range(h):
+  tempcols = []
+  for j in range(w):
+    tempcols.append(pic.pixels[x+i][y+j])
+  croppedPic.pixels.append(tempcols)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture (x-start=0 y-start=0 w=5 h=5)</title>
+
+          <programlisting>..#..
+..##.
+..#.#
+..#..
+..#..</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Finding the differences of two pictures</title>
+
+        <para>If the pictures' pixel is same then the difference picture's
+        that pixel will be '.' otherwise it will be '#'.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para>picInMemory1 is the first picture, picInMemory2 is the second
+          picture. lastRowIndex1, lastColIndex1 are first picture's size
+          indexes the others are second picture's. MAX is defined as "#define
+          MAX(x, y) x&gt;=y ? x : y"<programlisting language="C">maxRow = MAX(lastRowIndex1, lastRowIndex2);
+maxCol = MAX(lastColIndex1, lastColIndex2);
+     
+for(i=0; i&lt;maxRow; i++)
+{
+  for(j=0; j&lt;maxCol+1; j++)
+    differencePic.pixels[i][j] = picInMemory1.pixels[i][j]==picInMemory2.pixels[i][j] ? '.' : '#';
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">/**
+* returns the bigger or equal to of given two numbers
+*/
+private static int max(int n1, int n2)
+{
+  if(n1 &gt;= n2)
+    return n1;
+  else
+    return n2;
+}
+
+private static void findDifferences(picture picInMemory, picture picInMemory2)
+{
+  int maxRow = max(picInMemory.getRows()-1, picInMemory2.getRows()-1);
+  int maxCol = max(picInMemory.getCols()-1, picInMemory2.getCols()-1);
+
+  picture differencePic = new picture(maxRow+1, maxCol+1);
+  int i, j;
+
+  for(i=0; i&lt;maxRow+1; i++)
+  {
+    for(j=0; j&lt;maxCol+1; j++)
+    differencePic.pixels[i][j] = picInMemory.pixels[i][j]==picInMemory2.pixels[i][j] ? '.' : '#';
+  }
+}</programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">#returns the smaller or equal to of given two numbers
+def min(n1, n2):
+    
+    if n1 &lt;= n2:
+        return n1
+    else:
+        return n2
+
+def findDifferences(pic, pic2):
+
+  #if pictures are not the same size, the minimum size will be the size of difference picture
+  minRow = min(pic.rows, pic2.rows)
+  minCol = min(pic.cols, pic2.cols)
+    
+  differencePic = picture(minRow, minCol)
+    
+  for i in range(minRow):
+    column = []
+    for j in range(minCol):
+      if pic.pixels[i][j] == pic2.pixels[i][j]:
+        column.append('.')
+      else:
+        column.append('#')
+    differencePic.pixels.append(column)        
+        
+  differencePic.printPixels()</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture (picture 1 is 1.txt, picture 2 is
+          2.txt)</title>
+
+          <programlisting>..#.##.####
+..#..##...#
+..###.#...#
+..##..#...#
+..#.##.#..#
+###########</programlisting>
+        </section>
+      </section>
+
+      <section>
+        <title>Detecting the edges of a picture</title>
+
+        <para>This operation finds the edges of the picture. An edge pixel
+        must be black ('#') and must not be surrounded with black pixels. If a
+        black pixel is all surrounded with black pixels, it is not on the
+        edge. If a black pixel is on a border line of the picture then it is
+        on the edge for sure. A white pixel is never considered on a edge, the
+        edges will be shown as black pixels at the output picture.</para>
+
+        <section>
+          <title>Solution in C</title>
+
+          <para><programlisting language="C">for(i=0; i&lt;lastRowIndex; i++)
+{
+  for(j=0; j&lt;lastColIndex+1; j++)
+  {             
+    if(picInMemory.pixels[i][j] == '#')
+    {
+      //if the black pixel is on the edges of the picture, then it is a part of edge             
+      if(i==0 || j==0 || i==lastRowIndex || j==lastColIndex)
+        edgePic.pixels[i][j] = '#';
+      else
+      {
+        /* if all the pixels around a black pixel is black, then
+           it is not a edge, otherwise it is considered edge  */
+        if(picInMemory.pixels[i+1][j] == '#' 
+             &amp;&amp; picInMemory.pixels[i-1][j] == '#' 
+             &amp;&amp; picInMemory.pixels[i][j+1] == '#' 
+             &amp;&amp; picInMemory.pixels[i][j-1] == '#'
+             &amp;&amp; picInMemory.pixels[i-1][j-1] == '#'
+             &amp;&amp; picInMemory.pixels[i+1][j+1] == '#')
+           edgePic.pixels[i][j] = '.';
+        else
+          edgePic.pixels[i][j] = '#';
+      }                           
+    }
+    else
+      edgePic.pixels[i][j] = '.';             
+  } // j for end
+} //i for end </programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Java</title>
+
+          <para><programlisting language="Java">picture edgePic = new picture(picInMemory.getRows(), picInMemory.getCols());
+
+int j, i;
+int lastColIndex = picInMemory.getCols()-1;
+int lastRowIndex = picInMemory.getRows()-1;
+
+for(i=0; i&lt;lastRowIndex+1; i++)
+{
+  for(j=0; j&lt;lastColIndex+1; j++)
+  {             
+    if(picInMemory.pixels[i][j] == '#')
+    {
+      //if the black pixel is on the edges of the picture, then it is a part of edge             
+      if(i==0 || j==0 || i==lastRowIndex || j==lastColIndex)
+        edgePic.pixels[i][j] = '#';
+      else
+      {
+        /* if all the pixels around a black pixel is black, then
+           it is not a edge, otherwise it is considered edge  */
+        if(picInMemory.pixels[i+1][j] == '#' 
+           &amp;&amp; picInMemory.pixels[i-1][j] == '#' 
+           &amp;&amp; picInMemory.pixels[i][j+1] == '#' 
+           &amp;&amp; picInMemory.pixels[i][j-1] == '#'
+           &amp;&amp; picInMemory.pixels[i-1][j-1] == '#'
+           &amp;&amp; picInMemory.pixels[i+1][j+1] == '#')
+          edgePic.pixels[i][j] = '.';
+        else
+          edgePic.pixels[i][j] = '#';
+      }                           
+   }
+   else
+    edgePic.pixels[i][j] = '.';             
+
+  } // j for end
+} //i for end </programlisting></para>
+        </section>
+
+        <section>
+          <title>Solution in Python</title>
+
+          <para><programlisting language="Python">edgePic = picture(pic.rows, pic.cols)
+    
+for i in range(pic.rows):
+  column = []
+  for j in range(pic.cols):             
+    if pic.pixels[i][j] == '#':
+      #if the black pixel is on the edges of the picture, then it is a part of edge             
+      if i==0 or j==0 or i==pic.rows-1 or j==pic.cols-1:
+        column.append('#')
+        # if all the pixels around a black pixel is black, then
+        #   it is not a edge, otherwise it is considered edge 
+      else:                   
+        if pic.pixels[i+1][j] == '#' and pic.pixels[i-1][j] == '#' and pic.pixels[i][j+1] == '#' and pic.pixels[i][j-1] == '#' and pic.pixels[i-1][j-1] == '#' and pic.pixels[i+1][j+1] == '#':
+          column.append('.')
+        else:
+          column.append('#')
+    else:
+      column.append('.')
+
+edgePic.pixels.append(column)</programlisting></para>
+        </section>
+
+        <section>
+          <title>Output picture (picture is 3.txt)</title>
+
+          <programlisting>##########
+#........#
+#........#
+#........#
+##########</programlisting>
+        </section>
+      </section>
+    </section>
+  </section>
+</article>

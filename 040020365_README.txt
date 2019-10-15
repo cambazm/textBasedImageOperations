@@ -1,0 +1,30 @@
+At command line,
+----------------------------------
+To compile the C code:
+gcc 040020365_c.c -o 040020365_c
+
+To run the C executable:
+040020365_c
+----------------------------------
+----------------------------------
+To compile the Java code:
+javac main.java
+
+To run the Java program:
+java main
+----------------------------------
+----------------------------------
+To run the Python code:
+main.py
+
+or just double click the main.py
+----------------------------------
+----------------------------------
+To compile the Haskell code:
+ghc --make Main.hs
+
+To run the Haskell executable:
+main
+
+or just double click the Main.hs
+----------------------------------
